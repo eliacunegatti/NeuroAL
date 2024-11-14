@@ -88,4 +88,4 @@ Our codebase is developed on top of the following repositories:
 
 
 ## Contact
-The codebase underwent a major refactoring before publication. If you encounter any issues, please reach out to [elia.cunegatti@unitn.it](mailto:your-email@example.com) or open a public issue 😀.
+The codebase underwent a major refactoring before publication. If you encounter any issues, please reach out to [elia.cunegatti@unitn.it](mailto:elia.cunegatti@unitn.it) or open a public issue 😀.

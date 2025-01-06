@@ -2,7 +2,11 @@
 
 **Zeroth-Order Adaptive Neuron Alignment Based Pruning without Retraining**
 
+> ⛏️ ‼️ **Paper and Code Updates will be released soon.**
+
 Preprint available on ArXiv 🔥.
+
+
 
 [![arXiv](https://img.shields.io/badge/arXiv-2411.07066-b31b1b.svg)](https://arxiv.org/pdf/2411.07066v1) 
 

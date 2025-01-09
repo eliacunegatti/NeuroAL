@@ -222,6 +222,7 @@ def prune_DSnoT(
             args, model, dataloader, device
         )
 
+
     layers = model.model.layers
     for i in range(len(layers)):
         layer = layers[i]
@@ -299,7 +300,6 @@ def prune_DSnoT(
                 initial_metric = W**2 / (torch.diag(Hinv).reshape((1, -1))) ** 2
 
             weight_mask = torch.zeros_like(initial_metric) == 1
-
             if prune_n != 0:
                 if (name.split(".")[0] == args.skip_layer or name.split(".")[1] == args.skip_sub_layer):
                     for ii in range(initial_metric.shape[1]):
@@ -633,8 +633,6 @@ def prune_DSnoT(
                             regrowing_metric,
                             torch.zeros_like(regrowing_metric),
                         )
-
-            
             subset[name].weight.data[weight_mask] = 0
 
 

@@ -28,7 +28,7 @@ __global__ void MaskData_kernal(
   int n = blockIdx.x;
   int g = blockIdx.y;
   
-  if(g >= top_k[n])
+  if(g < top_k[n])
     mask[n][index[n][g]] = 0;
 
 

@@ -463,7 +463,8 @@ def compute_mask(W_metric, prune_granularity, sparsity):
         return W_mask 
     elif prune_granularity == 'neuron':
         #code base on row-wise pruning https://github.com/OpenGVLab/LLMPrune-BESA 
-        sort_indices = torch.sort(W_metric, dim=-1,stable=True, descending=False)[1]
+        sort_indices = torch.sort(W_metric, dim=-1,stable=True, descending=True)[1]
+        sparsity = [1-x for x in sparsity]
         sparsity_levels = torch.tensor(sparsity, device=W_metric.device)
         row_block_prune_num = (sparsity_levels * W_metric.shape[1]).to(dtype=torch.long)
         row_prune_num = row_block_prune_num.reshape(-1, 1).repeat(1, 1).reshape(-1)

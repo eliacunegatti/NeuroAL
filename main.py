@@ -19,7 +19,7 @@ from lib.prune_opt import (
 )
 from sparsity_distribution import (
     get_neuroal_sparsity_distribution, get_owl_sparsity_distribution, 
-    get_uniform_sparsity_distribution
+    get_uniform_sparsity_distribution,get_alpha_sparsity_distribution
 )
 
 
@@ -62,7 +62,7 @@ def parse_arguments():
     
     # Top-up options
     parser.add_argument("--top_up", type=str, default='neuroal',
-                        choices=["neuroal", "owl", "DSnoT", "uniform"], help="Top-up method")
+                        choices=["neuroal", "owl", "DSnoT", "uniform", "alpha"], help="Top-up method")
     parser.add_argument("--cache_dir", type=str, default="llm_weights", help="Cache directory for model weights")
 
     # NeuroAl Hyperparameters
@@ -115,7 +115,8 @@ def main():
     args = parse_arguments()
     set_seed(args.seed)
     args.model_type = determine_model_type(args)
-    
+    model_name = args.model.split('/')[-1]
+
     print(f"Model type: {args.model_type}")
     print(f"Loading LLM model {args.model}")
     
@@ -152,12 +153,14 @@ def main():
         layers = model.model.layers
 
     
-    if args.top_up == 'neuroal': 
+    if args.top_up == 'neuroal':
         sparsity_distribution, granularity, best_lambda_group,best_lambda_neuron = get_neuroal_sparsity_distribution(args, model, tokenizer, device, layers)
     elif args.top_up == 'owl':
         sparsity_distribution, granularity = get_owl_sparsity_distribution(args, model, tokenizer, device, calib_data)
     elif args.top_up == 'uniform':
         sparsity_distribution, granularity = get_uniform_sparsity_distribution(args, layers)
+    elif args.top_up == 'alpha':
+        sparsity_distribution, granularity = get_alpha_sparsity_distribution(args,  model, device, model_name, layers)
 
 
     with torch.no_grad():
@@ -190,7 +193,7 @@ def main():
                         args.skip_layer = 'mlp'
                     elif args.model_type == 'opt':
                         args.skip_layer = 'fc'
-                
+                                
                 if args.model_type == "opt":
                     prune_DSnoT_opt(args, model, tokenizer, device, calib_data)
                 else:
@@ -205,7 +208,6 @@ def main():
         sparsity_ratio = check_sparsity(model)
     print(f"Overall Sparsity Ratio: {sparsity_ratio:.4f}")
     print("*"*30)
-    model_name = args.model.split('/')[-1]
 
     if args.tasks == 'LM' or args.tasks == 'both':
         dataset = 'wikitext2'

@@ -227,18 +227,17 @@ def get_neuroal_row(args,model, dataloader, dist_base, device='cuda:0'):
         inps = inps_sparse.clone()
         outs = out_sparse.clone()
 
+
         for idx_h, name in enumerate(subset):
             subset[name].weight.data = weights[name]
             dense = activations_dense[name]
             sparse = activations_sparse[name]
-
             
             dense = dense / dense.sum()
             sparse = sparse / sparse.sum()
             difference = dense - sparse
-            norm_difference_norm_act = torch.norm(difference, p=2)
 
-            neuroal_[f'{name}-{layer_id_to_check}'] = norm_difference_norm_act.item() / len(dense)
+            neuroal_[f'{name}-{layer_id_to_check}'] = torch.norm(difference, p=2).item() / dense.numel()
 
         del inps_sparse, out_sparse, activations_dense, activations_sparse, output_sparse, output_dense, weights
         torch.cuda.empty_cache()

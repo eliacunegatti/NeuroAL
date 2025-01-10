@@ -4,7 +4,7 @@
 
 Preprint available on ArXiv 🔥.
 
-[![arXiv](https://img.shields.io/badge/arXiv-2411.07066-b31b1b.svg)](https://arxiv.org/pdf/2411.07066v1) 
+[![arXiv](https://img.shields.io/badge/arXiv-2411.07066-b31b1b.svg)](https://arxiv.org/pdf/2411.07066?) 
 
 [Elia Cunegatti](https://scholar.google.com/citations?hl=it&user=a2JJRjMAAAAJ), [Leonardo Lucio Custode](https://scholar.google.com/citations?user=3qvS-AwAAAAJ&hl=it), [Giovanni Iacca](https://sites.google.com/site/giovanniiacca/).
 

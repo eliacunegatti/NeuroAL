@@ -50,7 +50,7 @@ In order To reproduce our method as well as the baselines, run:
 python3 main.py --model microsoft/phi-2 --prune_method wanda --sparsity_ratio 0.7 --top_up neuroal --neuroal_step both
 ```
 
-To run NeuroAL as presented in the paper, use `--neuroal_step both`. For block-only (faster) or row-only (slower) execution, set the flag to either `block` or `row`. To run the competitors, set `--top_up` to one of the three options available (`uniform`, `DSnoT`, or `OWL`). All additional details and options for the commands are listed in the help text below.
+To run NeuroAL as presented in the paper, use `--neuroal_step both`. For block-only (faster) or row-only (slower) execution, set the flag to either `block` or `row`. To run the competitors, set `--top_up` to one of the three options available (`uniform`, `DSnoT`, `OWL`, or `alpha`). All additional details and options for the commands are listed in the help text below.
 
 
 

@@ -39,7 +39,7 @@ pip install -e .
 To use the Customized Cuda Operator for efficient row-wise pruning (all credits to ```BESA``` authors 🙏, *we just re-used their Cuda implementation* available  [here](https://github.com/OpenGVLab/LLMPrune-BESA)) install as follows:
 
 ```bash
-cd models/ops
+cd ops
 python setup.py install
 ```
 

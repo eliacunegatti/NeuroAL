@@ -2,9 +2,10 @@
 
 **Zeroth-Order Adaptive Neuron Alignment Based Pruning without Retraining**
 
-Preprint available on ArXiv 🔥.
+Accepted at Workshop on Sparsity in LLMs (SLLM) @ ICLR 2025.
 
-[![arXiv](https://img.shields.io/badge/arXiv-2411.07066-b31b1b.svg)](https://arxiv.org/pdf/2411.07066?) 
+[![arXiv](https://img.shields.io/badge/arXiv-2411.07066-b31b1b.svg)](https://arxiv.org/pdf/2411.07066?) [![SLLM@ICLR2025](https://img.shields.io/badge/SLLM@ICLR2025-peyLy5ek4w-blue.svg)](https://openreview.net/pdf?id=peyLy5ek4w)
+
 
 [Elia Cunegatti](https://scholar.google.com/citations?hl=it&user=a2JJRjMAAAAJ), [Leonardo Lucio Custode](https://scholar.google.com/citations?user=3qvS-AwAAAAJ&hl=it), [Giovanni Iacca](https://sites.google.com/site/giovanniiacca/).
 
@@ -21,8 +22,17 @@ University of Trento, Italy
   journal={arXiv preprint arXiv:2411.07066},
   year={2024}
 }
-```
 
+|
+
+@inproceedings{cunegatti2025zerothorder,
+title={Zeroth-Order Adaptive Neuron Alignment Based Pruning without Re-Training},
+author={Elia Cunegatti and Leonardo Lucio Custode and Giovanni Iacca},
+booktitle={Sparsity in LLMs (SLLM): Deep Dive into Mixture of Experts, Quantization, Hardware, and Inference},
+year={2025},
+url={https://openreview.net/forum?id=peyLy5ek4w}
+}
+```
 ## Setup
 
 This project was developed using Python 3.9.18. You can find all dependencies in the `deps` folder, provided as a standard list of pip requirements and as a conda environment. To create a conda environment for this project, run `conda env create -f deps/environment.yaml`. To install dependencies using pip, run `pip install -r deps/requirements.txt`.

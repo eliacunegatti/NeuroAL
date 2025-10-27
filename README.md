@@ -1,19 +1,25 @@
-# NeuroAL
+<div align="center">
+  
+## Zeroth-Order Adaptive Neuron Alignment Based Pruning without Re-Training <br> (TMLR 2025)
 
-**Zeroth-Order Adaptive Neuron Alignment Based Pruning without Retraining**
-
-Accepted at Workshop on Sparsity in LLMs (SLLM) @ ICLR 2025.
-
-[![arXiv](https://img.shields.io/badge/arXiv-2411.07066-b31b1b.svg)](https://arxiv.org/pdf/2411.07066?) [![SLLM@ICLR2025](https://img.shields.io/badge/SLLM@ICLR2025-peyLy5ek4w-blue.svg)](https://openreview.net/pdf?id=peyLy5ek4w)
+[Elia Cunegatti](https://eliacunegatti.github.io/), [Leonardo Lucio Custode](https://leocus.gitlab.io/), [Giovanni Iacca](https://sites.google.com/site/giovanniiacca/) <br>
 
 
-[Elia Cunegatti](https://scholar.google.com/citations?hl=it&user=a2JJRjMAAAAJ), [Leonardo Lucio Custode](https://scholar.google.com/citations?user=3qvS-AwAAAAJ&hl=it), [Giovanni Iacca](https://sites.google.com/site/giovanniiacca/).
 
-University of Trento, Italy
+**Published in Transactions on Machine Learning Research (TMLR)** <br>
+& <br>
+*Accepted at Workshop Sparsity in LLMs (SLLM) @ ICLR 2025*
+
+  [![arXiv](https://img.shields.io/badge/arXiv-2501.17771-b31b1b.svg)](https://arxiv.org/abs/2411.07066) [![OpenReview](https://img.shields.io/badge/OpenReview-Paper-blue)](https://openreview.net/pdf?id=uPyNaNqFK2)
+ [![SLLM@ICLR2025](https://img.shields.io/badge/SLLM@ICLR2025-j0NRBl9vVd-blue.svg)](https://openreview.net/pdf?id=peyLy5ek4w)
+</div>
 
 
->**Abstract.**
-*Network pruning focuses on computational techniques that aim to reduce a given model's computational cost by removing a subset of its parameters while having minimal impact on performance. Throughout the last decade, the most widely used pruning paradigm has been pruning and re-training, which nowadays is inconvenient due to the vast amount of pre-trained models, which are in any case too expensive to re-train. In this paper, we exploit functional information from dense pre-trained models, i.e., their activations, to obtain sparse models that maximize the activations' alignment w.r.t. their corresponding dense models. Hence, we propose **NeuroAL**, a *top-up* algorithm that can be used on top of any given pruning algorithm for LLMs, which modifies the block-wise and row-wise sparsity exploiting information from both the dense model and its sparse version to maximize the *neuron alignment* among activations. Differently from existing methods, our approach adaptively selects the best hyperparameters for the block-wise and row-wise sparsity ratios w.r.t. the model and the desired sparsity, and requires *no re-training*. We test our method over 276 cases combining four LLM families, three sparsity ratios, and ten language tasks (three language modeling and seven zero-shot datasets), showing how it consistently outperforms the latest state-of-the-art methods in terms of performance-runtime trade-off.*
+
+
+> **Abstract.**
+*Network pruning focuses on algorithms that aim to reduce a given model's computational cost by removing a subset of its parameters while having minimal impact on performance. Throughout the last decade, the most widely used pruning paradigm has been pruning and re-training, which nowadays is inconvenient due to the vast amount of pre-trained models, which are, in any case, too expensive to re-train. In this paper, we exploit functional information from dense pre-trained models, i.e., their input activations, to obtain sparse models that maximize the activations' alignment with respect to their corresponding dense models. Hence, we propose **NeuroAL**, a top-up algorithm that can be used on top of any given pruning algorithm for LLMs, which modifies the block-wise and row-wise sparsity, exploiting information from both the dense model and its sparse version to maximize the neuron alignment among activations. Different from existing methods, our approach adaptively selects the best hyperparameters for the block-wise and row-wise sparsity ratios w.r.t. the model and the desired sparsity, and requires no re-training. We test our method over 
+300 test cases with four LLM families, three sparsity ratios, and ten language tasks (three language modeling and seven zero-shot datasets), showing how it consistently outperforms the latest state-of-the-art methods in terms of performance-runtime trade-off.*
 
 ```bibtex
 @article{cunegatti2024zeroth,
@@ -22,18 +28,8 @@ University of Trento, Italy
   journal={arXiv preprint arXiv:2411.07066},
   year={2024}
 }
-
-|
-
-@inproceedings{cunegatti2025zerothorder,
-title={Zeroth-Order Adaptive Neuron Alignment Based Pruning without Re-Training},
-author={Elia Cunegatti and Leonardo Lucio Custode and Giovanni Iacca},
-booktitle={Sparsity in LLMs (SLLM): Deep Dive into Mixture of Experts, Quantization, Hardware, and Inference},
-year={2025},
-url={https://openreview.net/forum?id=peyLy5ek4w}
-}
 ```
-## Setup
+## Installation
 
 This project was developed using Python 3.9.18. You can find all dependencies in the `deps` folder, provided as a standard list of pip requirements and as a conda environment. To create a conda environment for this project, run `conda env create -f deps/environment.yaml`. To install dependencies using pip, run `pip install -r deps/requirements.txt`.
 
